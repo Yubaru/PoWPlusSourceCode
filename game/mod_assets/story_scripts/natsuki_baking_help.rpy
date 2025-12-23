@@ -2,7 +2,7 @@
 label natsuki_baking_help:
 stop music fadeout 2.0
 play music tt2 fadein 2.0
-
+# Testing if this appears in Main
 scene bg corridor_reverse
 with dissolve_scene_full
 
