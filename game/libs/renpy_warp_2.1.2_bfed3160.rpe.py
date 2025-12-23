@@ -1,8 +1,14 @@
-# This file is created by the Ren'Py Launch and Sync Visual Studio Code
-# extension. It can be safely be deleted if you do not want to use the features
-# provided by the extension.
+# This file managed by the Ren'Py Launch and Sync Visual Studio Code extension.
 #
-# This file should not be checked into source control.
+# This script provides a mechanism for your Ren'Py game to connect to VS Code
+# via a websocket server. It is automatically excluded from builds of your game.
+# You can delete this file if you do not want to use the features provided by
+# the extension.
+#
+# This file should not be checked into source control. You can add it to your
+# `.gitignore` file by adding the following line:
+#
+# renpy_warp_*.rpe*
 #
 
 import renpy  # type: ignore
@@ -100,7 +106,7 @@ def socket_listener(websocket):
 
 def socket_producer(websocket):
     """produces messages to the socket server"""
-    from websockets.exceptions import ConnectionClosedOK, ConnectionClosedError  # type: ignore
+    from websockets.exceptions import ConnectionClosed  # type: ignore
 
     send = functools.partial(socket_send, websocket=websocket)
 
@@ -123,20 +129,35 @@ def socket_producer(websocket):
 
             try:
                 send(message)
-            except (ConnectionClosedOK, ConnectionClosedError):
+            except ConnectionClosed:
                 # socket is closed, remove the callback
                 renpy.config.all_character_callbacks.remove(fn)
 
     renpy.config.all_character_callbacks.append(fn)
+
+    def label_callback(name, abnormal):
+        try:
+            send({"type": "current_label", "label": name})
+        except ConnectionClosed:
+            # socket is closed, remove the callback
+            renpy.config.label_callbacks.remove(label_callback)
+
+    renpy.config.label_callbacks.append(label_callback)
 
     send({"type": "list_labels", "labels": list(renpy.exports.get_all_labels())})
 
 
 def socket_service(port, version, checksum):
     """connects to the socket server. returns True if the connection has completed its lifecycle"""
-    # websockets module is bundled with renpy
+    # websockets module is bundled with renpy on versions >=8.2.0
     from websockets.sync.client import connect  # type: ignore
-    from websockets.exceptions import WebSocketException, ConnectionClosedOK, ConnectionClosedError  # type: ignore
+    from websockets.exceptions import (  # type: ignore
+        WebSocketException,
+        ConnectionClosedOK,
+        ConnectionClosedError
+    )
+
+    logger.debug(f"try port {port}")
 
     try:
         headers = {
@@ -152,38 +173,45 @@ def socket_service(port, version, checksum):
         with connect(
             f"ws://localhost:{port}",
             additional_headers=headers,
-            open_timeout=5,
+            open_timeout=None,
             close_timeout=5,
         ) as websocket:
+            quitting = False
+
             def quit():
+                nonlocal quitting
+                quitting = True
                 logger.info(f"closing websocket connection :{port}")
                 websocket.close(4000, 'renpy quit')
 
             renpy.config.quit_callbacks.append(quit)
 
             logger.info(f"connected to renpy warp socket server on :{port}")
+            py_exec("renpy.notify(\"Connected to Ren'Py Launch and Sync\")")
 
             socket_producer(websocket)
             socket_listener(websocket)  # this blocks until socket is closed
 
             logger.info(f"socket service on :{port} exited")
 
+            if not quitting:
+                py_exec(
+                    "renpy.notify(\"Disconnected from  Ren'Py Launch and Sync\")")
+
     except ConnectionClosedOK:
-        logger.info("server closed connection")
+        logger.info(f"socket service on :{port} was terminated by server")
+        pass
 
-    except ConnectionClosedError:
-        logger.warning("server closed connection unexpectedly")
-
-    except ConnectionRefusedError:
-        logger.debug(f"socket connection refused on :{port}, service closing")
+    except ConnectionClosedError as e:
+        logger.info("connection replaced, service exiting")
         return True
 
     except WebSocketException as e:
-        if e.code == 4000:
-            logger.info("socket service got code 4000, service closing")
-            return True
-        else:
-            logger.exception("unexpected websocket error", exc_info=e)
+        logger.exception("unexpected websocket error", exc_info=e)
+
+    except (ConnectionError, TimeoutError) as e:
+        logger.debug(
+            f"{e.__class__.__name__}: could not establish connection to socket server")
 
     return False
 
@@ -203,8 +231,11 @@ def try_socket_ports_forever():
         if service_closed:
             break
 
-        logger.debug("exhausted all ports, waiting 3 seconds before retrying")
+        logger.debug(
+            "exhausted all ports, waiting 3 seconds before retrying")
         sleep(3)
+
+    logger.info("service closed")
 
 
 def start_renpy_warp_service():
@@ -218,11 +249,16 @@ def start_renpy_warp_service():
 
 
 def declassify():
-    """removes `renpy_warp_*.rpe` from build"""
+    """
+    removes `renpy_warp_*.rpe{.py}` from build
+
+    on renpy 8.3 and later, this is automatically done by the renpy build system
+    """
 
     classify = renpy.python.store_dicts["store.build"]["classify"]
     classify("game/renpy_warp_*.rpe", None)
+    classify("game/renpy_warp_*.rpe.py", None)
 
 
 renpy.game.post_init.append(declassify)
-renpy.game.post_init.append(start_renpy_warp_service)
+renpy.config.display_start_callbacks.append(start_renpy_warp_service)
