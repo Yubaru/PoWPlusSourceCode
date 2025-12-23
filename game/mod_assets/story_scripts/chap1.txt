@@ -1,0 +1,1008 @@
+
+
+#Rizz Choice Example:
+#"You’re at the Literature Club meeting. Monika approaches you."
+
+#show monika forward happ at t11
+#m forward happ om "Hey, [player]! We’re planning the festival. Do you want to help with the posters?"
+
+#menu:
+#    "Sure, I’d love to help!":
+#        call rizz_update(points_change=+1)
+#        m forward flus blus om "That’s great! I knew I could count on you."
+
+#    "I’m not really into that...":
+#        call rizz_update(points_change=+1)
+#        m forward sad om "Oh... okay. I’ll find someone else."
+
+#    "Only if you help me with something later.":
+#        call rizz_update(points_change=+1)
+#        m forward sedu om "Oh? What do you need help with?"
+
+#return
+
+
+
+
+#Calling the Ring Toss game.
+
+#call ring_toss_game
+
+
+
+
+#Calling the Shooting Gallery game.
+
+#call shooting_gallery
+
+
+
+
+#Gaining an item. (Must show screen toggle at beginning of label)
+#show screen toggle_inventory
+
+#call collect_item("Example Item from script.rpy") 
+
+
+
+
+#Calling a texing conversation or calls.
+
+#call sayori_text_1
+
+
+
+
+#Calling the Meat Beat Mania game.
+
+#call meat_beat_mania
+
+
+$ yazz_win = False
+
+
+
+
+
+
+
+
+label chap1:
+$ af_enabled = True
+stop music fadeout 2.0
+scene bg residential_day
+with dissolve_scene_full
+"It's the day of the festival."
+"Of all days, I expected this to be the one where I'd be walking to school with Sayori."
+"But Sayori isn't answering her phone."
+"I considered going to her house to wake her up, but decided that's a little too much."
+"Meanwhile, the preparations for the event should be nearly complete."
+"I spent all night working on those posters Monika gave me."
+"I'm surprised she asked me of all people to help her with such a thing."
+"It's only been 4 days since I joined and she trusts me this much."
+scene bg park
+with wipeleft
+"The walk to school feels quieter than usual without Sayori’s endless chatter."
+"I hope she’s okay. She’s always been a little scatterbrained, but she’s never just... ignored me like this."
+"Maybe she’s just running late. Or maybe she’s already at school, helping the others set up."
+"I'll just send her a message to make sure shes okay."
+"I pull out my phone and open our chat."
+play music sayorit5
+call sayori_text_1 from _call_sayori_text_1_1
+who "Huh, I guess she was alright."
+who "I gotta stop worrying about her, shes able to take care of herself just fine."
+"Putting my phone back into my pocket I resume my commute to school."
+scene bg park2
+with wipeleft_scene
+pause 1.5
+scene bg courtyard
+with wipeleft_scene
+stop music fadeout 2.0
+pause 1.5
+scene bg corridor
+with wipeleft_scene
+play music t3
+"When I arrive at the school, the hallway leading to the clubroom is unusually lively."
+"Students are already setting up decorations for the festival, and the air is buzzing with excitement."
+"I can hear Natsuki’s voice before I even reach the door."
+n "Ugh, Yuri, can you move that table a little to the left? It’s blocking the cupcakes!"
+y "My apologies, Natsuki. I didn’t realize it would interfere with your display."
+m "It’s fine, Yuri. Natsuki’s just being dramatic. The table looks fine where it is."
+n "Dramatic?! Excuse me, Monika, but the cupcakes are the main attraction here! They deserve to be front and center!"
+"I push the door open, and all three of them turn to look at me."
+scene bg club_day 
+with wipeleft
+show monika 1b at t11
+m "Oh, there you are.. Jacko! I was wondering when you’d show up."
+show monika 1a
+j "Hey. Sorry if I’m late. I was finishing up the posters."
+show monika 1a at t22
+show natsuki 2b at t21
+n "About time! Did ya bring em'?"
+show natsuki 1a
+"I hold up the stack of neatly folded posters, and Natsuki snatches one out of my hands."
+hide monika
+show natsuki 1k at t11
+n "Hmmmmmmm..."
+show natsuki 4i at t11
+"Natsuki inspects the posters like shes assuring the quality of them."
+n 5t "Huh. Not bad. I guess you’re good for something after all."
+show natsuki 4g at t21
+show yuri 3d at t22
+y "They look very professional. You did an excellent job."
+show yuri 1a at t32
+show natsuki 1g at t31
+show monika 4b at t33
+m "See? I told you he’d come through."
+hide yuri
+hide natsuki
+show monika 5a at t11
+"Monika smiles at me, and for a moment, I forget how tired I am from staying up all night."
+m 1b "Thanks again for helping me with these. I couldn’t have finished them without you."
+m 4e "I really appreciate that Jacko."
+j "No problem. I didn’t mind helping you out. It was pretty fun making them actually."
+"The posters are sleek and inviting. 'Welcome to The Literature Club!' is written in a cutesy font across the top of the paper."
+"Inside, they’re neatly organized with club info, event details, and little decorative touches like stars, stickers and quills, giving them a feeling of.."
+"Moe.."
+"I mean considering this club, Moe was probably the best option to go for."
+m "You’ve got a good eye for detail!"
+m "I noticed how you adjusted the spacing on the headers to make them more readable. Not everyone would think to do that."
+j "Well, I figured if we’re going to hand these out, they should look as polished as possible. First impressions matter, right?"
+show monika 5a at t11
+m "Exactly. You’re a natural at this."
+"You got the Literature Club Poster!"
+show screen toggle_inventory
+call collect_item("Literature Club Poster") from _call_collect_item
+show monika 1a at t22
+show natsuki 4e at t21
+n "Ugh, can we not turn this into a lovefest? We’ve got a festival to set up, remember?"
+call unlock_photo(12)
+show monika 2i at t22
+show natsuki 4g at t21
+m "Relax, Natsuki. I'm just giving credit where it’s due."
+show monika forward rhip n4 e1c at t22
+show natsuki 5i 
+"Monika seems annoyed or rather.. embarrassed at that comment?"
+show monika 2c at t33
+show natsuki 4g at t31
+show yuri 1b at t11
+y "I have to agree with Monika. The posters are quite impressive. Did you use a specific design program, or did you do it all by hand?"
+show yuri 1a 
+j "I used a program. It made it easier to tweak things until they looked just right."
+y 2d "That’s fascinating. I’ve always wanted to learn more about graphic design. Maybe you could show me sometime?"
+show yuri shy neut b3 
+n turned anno om oe "Oh, great. Now Yuri’s getting in on the praise train. Can we please focus on the festival?"
+show natsuki turned anno cm oe
+y shy neut e5 "Hmph."
+hide yuri
+"Yuri scoffs and walks back to the banners."
+show monika 1d at t22
+show natsuki turned neut md at t21
+m "Alright, alright. Let’s get back to work. Jacko, do you mind helping Natsuki with the cupcake display? She could use an extra pair of hands."
+hide monika 
+n 4e "Wait, what? I don’t need help! I’ve got this under control!"
+show natsuki 4g at t11
+j "Are you sure? I don’t mind helping out."
+n 5w "Ugh, fine. But don’t touch anything unless I tell you to!"
+show natsuki 5r
+"Reluctantly, Natsuki leads you over to the cupcake display, which is already looking pretty impressive."
+n 5s "Okay, so here’s the plan. We need to arrange these cupcakes in a way that looks... I don’t know, fancy or something. Monika said it has to be ‘aesthetically pleasing.’ Whatever that means."
+show natsuki 5g
+j "Got it. Fancy and aesthetically pleasing. Any specific ideas?"
+n turned doub om oe "Well, duh! I was thinking we could do a gradient, like from light to dark. Or maybe arrange them in a spiral. But I’m not sure which one would look better."
+show natsuki turned neut e1a
+j "Hmm, what if we just put one cupcake on each desk in a gradient? Might be more eye-catching. What do you think?"
+n turned neut mg "Huh... that could work. But it’s going to take forever to get it just right."
+show natsuki turned neut md
+j "We’ve got time. Let’s give it a shot."
+show natsuki 2a 
+"Together, you and Natsuki start arranging the cupcakes to be on every desk with a poster detailing the clubs information and activities."
+n 4b "No, make sure its facing this way instead."
+show natsuki 5a
+"It’s a bit tricky at first, but after a few minutes, it starts to come together."
+n 2l "Okay, okay... not bad. But it still needs something. Maybe some extra decorations?"
+show natsuki turned neut md
+j "What about those little candles you made? We could pit them opposite of the cupcakes"
+n 1d "Oh! That’s actually a good idea. For once, you’re not completely useless."
+show natsuki 1a 
+scene black
+with wipeleft
+"Despite her harsh words, Natsuki seems to be warming up to your suggestions. She grabs the candles and starts placing them carefully onto the desks."
+hide natsuki
+y "Natsuki! Jacko! Would you be so kind to help me with the banners?"
+n "Yeah! We'll be there! Give us a sec!"
+"..."
+"All three of us start hanging up the banners around the desks and put one large banner on the side of the room."
+"..."
+"....."
+"......."
+"............."
+"Time passes."
+stop music fadeout 2.0
+scene bg club_festival
+with dissolve_scene_full
+play music tt1
+show natsuki turned happ om oe at t11
+n "There! Now it looks... kind of amazing. I guess you’re not totally hopeless after all."
+show natsuki turned happ cm oe
+j "Thanks, I think?"
+n cross laug om ce "Don’t let it go to your head. It’s still my display. You just helped a little."
+show natsuki cross happ cm oe at t21
+show yuri 1b at t22
+y "Amazing, our efforts are sure to be praised."
+show yuri 1c 
+"Monika walks over, looking impressed."
+show natsuki turned happ cm oe at t31
+show yuri 1c at t33
+show monika forward vsur om oe at t11
+m "Wow, you three did a great job! This looks fantastic."
+show monika forward neut mf
+n 4d "Of course it does. I was in charge, after all."
+show yuri 1g
+"Yuri sighs."
+y 2j "I suppose you are correct Natsuki."
+show yuri 1e
+m 4b "Well, it’s almost time for the festival to start. Let’s make sure everything’s ready."
+n rhip turned happ om ce "Alright! It's festival time!"
+hide yuri
+hide monika 
+hide natsuki
+"Everyone scrambles to put the finishing touches on their tasks. The clubroom is buzzing with excitement as the first guests start to arrive."
+show monika 4k at t11
+m "Alright, everyone! Let’s make this the best festival ever!"
+scene black
+with wipeleft
+"The festival begins, and the clubroom quickly fills with students. The cupcakes are a hit, and the posters draw a lot of attention."
+"Monika is busy greeting guests, while Yuri quietly hands out bookmarks she made herself."
+scene bg club_festival
+with wipeleft
+j "Looks like everything’s going well."
+show natsuki 5w at t11
+n "Yeah, no thanks to you."
+show natsuki 5x 
+j "E-eh?"
+n 2t "Just kidding! You actually helped a lot. Don’t tell anyone I said that, though."
+j "Your secret’s safe with me."
+show natsuki lhip rhip turned neut me
+"Just then, Sayori bursts into the room, holding a tray of chocolates."
+show natsuki 5i at t22
+show sayori 1m at l41
+s "Sorry I’m late! I got caught up handing these out. How’s everything going?"
+show sayori 1a at t31
+show monika 1b at t11
+show natsuki 5i at t33
+m "It’s going great! The cupcakes are a hit, and the posters are getting a lot of attention."
+show monika 1a 
+s 2r "That’s awesome! I knew we could pull this off. Here, try one of these chocolates I made!"
+show sayori 1q at t11
+show monika 1a at t31
+"Sayori hands me a piece of chocolate. It’s rich and creamy, with a hint of caramel."
+show sayori 1a
+j "Wow, this is amazing! Did you make these yourself?"
+s 3x "Yep! I stayed up late last night to get them just right. I wanted to make something special for the festival."
+show sayori 3a 
+n 2q "Hey, don’t forget about the cupcakes! I worked hard on those too, you know."
+show natsuki 2s
+s 1h "Of course not! Your cupcakes are amazing, Natsuki. Everyone’s talking about them!"
+show sayori 1d
+n 5t "Well, duh. They’re my best work yet."
+hide sayori
+hide natsuki
+hide monika
+"Sayori starts handing out chocolates to the guests, who eagerly take them. The room is buzzing with excitement, and the Literature Club’s booth is the center of attention."
+show sayori 1x at t11
+s "Hey, Jacko! Come try one of Natsuki’s cupcakes before they’re all gone!"
+show sayori 1a 
+j "I’ll be right there!"
+show sayori 1q
+"As you join the others, you realize how much the club has come to mean to you. It’s more than just a club it’s a place where you belong."
+hide sayori
+"Yuri approaches, holding a small stack of books."
+show yuri 2b at t11
+y "I thought it might be nice to give away some of my old books. They’re not doing any good sitting on my shelf."
+show yuri 2a
+j "That’s a great idea. I’m sure people will love them."
+y turned neut mb "I hope so. It’s nice to share something I care about with others."
+hide yuri
+"Yuri sets the books on the table, and soon enough, students are flipping through them with interest."
+show natsuki rhip lhip turned neut mq at t11
+n "Hey, Jacko! Stop slacking and help me refill the cupcakes!"
+show natsuki rhip lhip turned neut mj
+j "On it!"
+"You grab fresh cupcakes from Natsuki's tray and help her arrange them on the desks." 
+"Despite her tough exterior, you can tell she’s proud of how well everything’s going."
+n 1d "Not bad, huh? I told you I didn’t need help, but... I guess you were useful after all."
+show natsuki 1a
+j "Glad I could be of service."
+hide natsuki
+"Sayori bounces over, her box now empty."
+show sayori rup turned neut ml at t11
+s "The chocolates are all gone! Everyone loved them!"
+show sayori rdown turned neut ma at t22
+show monika 1b at t21
+m "That’s wonderful, Sayori. You really outdid yourself."
+hide sayori
+show monika 2a at t11
+"Monika looks around the room, her expression soft and proud."
+"As the festival winds down, the clubroom is filled with laughter and chatter. The guests are reluctant to leave, and you can’t help but feel a sense of accomplishment."
+j "This was amazing. I’m glad I could be a part of it."
+m lean happ om ce "We’re glad you’re here too, Jacko. You’ve become an important part of the club."
+show monika lean happ cm ce
+"Sayori grins and throws an arm around your shoulder."
+show monika 1a at t21
+show sayori 4r at t22
+s "Yeah! You’re one of us now, whether you like it or not!"
+show sayori 1q at t33
+show monika 1a at t31
+show natsuki cross laug om oe at t32
+n "Don’t get too comfortable. You still have to prove yourself."
+show monika 1a at t41
+show sayori 1a at t44
+show yuri 3j at t42
+show natsuki 1a at t43
+y "I think Jacko has already proven himself. He’s been a great help."
+show yuri 1m 
+"Yuri’s quiet compliment catches you off guard, but it feels genuine."
+show yuri 1a
+j "Thanks, Yuri. That means a lot."
+"Monika claps her hands to get everyone’s attention."
+hide sayori 
+hide natsuki
+hide yuri
+show monika 4b at t11
+m "Okay, everyone! Let’s clean up and celebrate our success. We’ve earned it!"
+show monika 4a at t11
+"The club members cheer, and as you help clean up, you can’t help but look forward to what the future holds for the Literature Club."
+show monika forward happ cm ce at t11
+m "This is exactly what I hoped for. Everyone’s having a great time, and the Literature Club is getting the recognition it deserves."
+"Monika thinks to herself."
+m forward nerv om oe "'This almost feels like a dream...'"
+menu:
+
+    "It's all thanks to you, Monika. You brought us all together.":
+        j "It's all thanks to you, Monika. You brought us all together."
+        m 1l "Ahaha! Jacko you're giving me too much credit."
+        m 4k "It was all of us that decided too work together to make something amazing!"
+        m 2e "And I'm glad I was able to have you apart of it Jacko!"
+        j "Of course Monika, I think you've been a great leader for this club and a great friend."
+        show monika 5a 
+        "Monika smiles sweetly."
+        m lean happ m3 "That means alot Jacko, thank you!"
+        show monika 5a
+        call rizz_update(points_change=+1) 
+        j "Alright I think some people out here have questions I'll go help them, if you need me just let me know, alright?"
+        m 1b "Okay I'll let you know!"
+        hide monika
+        "Monika and I walk to different sides of the club room."
+        jump chap1_mid
+        
+
+
+    "It's really fun being here with everyone...":
+        j "It's really fun being here with everyone... especially you Monika."
+        m forward flus blus om "You really think so Jacko? Thats really nice of you to say.."
+        show monika lean happ blus e2 
+        "She looks away shyly, her cheeks flushing a deeper shade of pink."
+        m forward happ blus om ce "You've been such a big part of this club, Jacko. I'm really grateful."
+        m forward rhip happ blus e1b "We should focus on the club Jacko. Before we get too distracted huh?"
+        j "Alright Monika, I'll be over here if you need me."
+        call rizz_update(points_change=+2)
+        show monika lean happ blus cm ce
+        "Monika smiles at you again before walking to the other side of the club."
+        hide monika
+        "Seeing Monika smile like that makes your heart skip a beat."
+        j "I'm jacking it."
+        stop music
+        "..."
+        "..."
+        "..."
+        "Anyways....."
+        jump chap1_mid
+
+
+
+    "Monika! I think some people over there have some questions!":
+        m forward vsur om oe "O-Oh! Of course, I'll be right there!"
+        show monika 1l
+        "She gives you an apologetic smile before hurrying off to address the group."
+        hide monika
+        "You watch as she confidently answers their questions, her passion for the club shining through."
+        j "Damn."
+        "She really is good at communicating with other people."
+        "I guess it makes sense that she was in the Debate Club."
+        "I wonder what made her start the Literature Club?"
+        j "Ah-"
+        "The thought of Monika leaves your head quickly as you realize Natsuki needs more help cleaning the cupcakes."
+        jump chap1_mid
+
+
+
+    "Let out a pained sigh.":
+        show monika forward neut e2a
+        stop music
+        play sound pained_sigh    
+        "..."
+        "........"
+        "..............."
+        show monika forward neut e2b
+        "........................"
+        show monika forward neut e2c
+        "................................."
+        show monika forward neut b2c
+        "You let out a large sigh."
+        "Some people stop talking to turn and look at the source of the sound."
+        m forward curi cm oe "Uhh.. Jacko? Is there something wrong?"
+        show monika curi md
+        "Monika steps closer and whispers in your ear."
+        show monika forward rhip b1b mi
+        m "That was really loud and everyone is staring."
+        show monika forward rhip b1b md
+        j "Yeah I'm fine."
+        show monika forward rdown b1b mi
+        m "Are you sure Jacko? You sounded kinda frustrated?"
+        m 4e "If you wanna step out and talk to me you can-{nw}"
+        show monika forward lsur cm oe at h11
+        j "YES! I'm fine!, holy shit Monika know when to shut the fuck up."
+        show monika forward sad cm oe
+        m "..."
+        show monika forward cry cm oe
+        m "..."
+        "Monika looks at you with a confused and sad face."
+        show monika 1q
+        "..."
+        show monika forward worr cm oe
+        "Monika wipes her tears."
+        m forward worr om oe "Y-yeah your right, sorry I'll just go over here.."
+        show monika forward worr cm ce
+        "Monika walks to another part of the club room while looking dejected."
+        hide monika 
+        "..."
+        j "Bitch."
+        call rizz_update(points_change=-4)
+        "What have you done."
+        #Locked true bad ending label.
+
+
+label chap1_mid:
+    stop music fadeout 2.0
+    scene black
+    with wipeleft
+    scene bg club_festival
+    with wipeleft_scene
+    play music tt3
+"..."
+"While cleaning up, you notice Monika organizing the remaining posters. Monika looks up and smiles at you."
+show monika forward happ b1b om oe at t11
+m "Hey, Jacko. Thanks for all your help today. You really went above and beyond."
+show monika forward happ b1b cm oe
+j "It was nothing. I’m just glad I could contribute."
+m 1k "You did more than contribute. You helped make this festival a success. I couldn’t have done it without you."
+show monika 1e 
+"Her words make you feel warm inside, and you find yourself smiling back at her."
+j "Well, I couldn’t have done it without you either. You’re an amazing leader, Monika."
+m 4b "That’s sweet of you to say. But it’s not just about leading it’s about having people like you who believe in the club and its mission."
+show monika ldown rdown forward nerv cm oe
+"Monika pauses for a moment, glancing around the now empty clubroom."
+m rhip forward nerv om oe "You know, the festival isn’t over yet. There’s still plenty to see and do. Would you like to explore the rest of it with me?"
+show monika rhip forward nerv cm oe
+menu:
+    "Yeah sure, I got nothing else to do after this.":
+        j "Yeah sure, I got nothing else to do after this."
+        m rdown forward neut om oe "Then we should hurry and get going then huh?"
+        show monika forward neut cm oe
+        j "Lead the way Monika."
+        show monika forward neut cm ce
+        "Monika grabs her bag and we head off."
+        m forward dist cm oe "..."
+        "Monika has a weird expression on her face."
+        call rizz_update(points_change=-1)
+        "..."
+
+
+    "I’d love to. Let’s go right now!":
+        j "I'd love to. Let's go!"
+        show monika forward happ e2a mc
+        "Monika’s face lights up, and she grabs her bag."
+        m lean happ blus m3 "Great! Let’s see what the other clubs have been up to. I’ve heard the Music Club has an amazing display this year."
+        show monika lean happ cm ce
+        call rizz_update(points_change=+1)
+        hide monika
+        "Together, you and Monika leave the clubroom and step into the bustling hallway."
+
+scene bg corridor
+with wipeleft_scene
+"The festival is still in full swing, and the energy is contagious."
+show monika 1a at t11
+j "This is incredible. I’ve never seen the school so lively."
+m forward happ om ce "It’s one of my favorite times of the year. Everyone comes together to share their passions and creativity. It’s inspiring, don’t you think?"
+show monika forward happ cm ce
+j "Yeah, it really is. And it’s all thanks to you and the Literature Club."
+m lean happ om ce "Thanks, Jacko. I really appreciate that Jacko."
+show monika lean happ cm oe
+"As you walk through the festival, Monika points out various booths and activities. Her enthusiasm is infectious, and you can’t help but feel excited too."
+m forward vsur om oe "Oh, look! The music club is performing. Let’s go check it out!"
+show monika forward vsur cm oe
+j "Lead the way."
+show monika 1j
+"You and Monika make your way to the music club’s performance."
+show monika 1a
+"As you walk with Monika you start to see two familar faces."
+j "Is that?"
+scene bg corridor_pov
+with wipeleft
+play music ba
+show yazz 2b at t21 
+show jacob 1a at t22
+z "What's up buddy? I see your walking with a GIRL.."
+z 1d "You know, thats not too sigma."
+z 1g "You could be playing some Pokemon Arceus with us."
+z 2g "But instead ur with a rapeable."
+j "Well, you know."
+j "I gotta rizz up."
+j "I'm already doing REALLY well."
+ja 3b "Oh really? What's your rizz rank then?"
+show jacob 3a 
+j "My rizz rank is [rizz_skill]."
+ja 2e "Pfft—numbers don't lie, but YOUR FACE DOES."
+z 2b "Bro got that 'trust me, I'm a rizzler' but your last text was 'wyd' with no follow up."
+j "Nigga you don't even have bitches."
+z 2j "Okay, okay, but hear me out. I have... a secret weapon."
+ja 1i "This fuck ass black guy is about to rip ass."
+"Yazz pulls out a purple looking liquid."
+ja 2j "What the hellings is that shit koolaid?"
+show jacob 2a
+z 1b "NO. This is PURE, UNFILTERED, YAZZ LIQUID."
+z 2a "I CALL IT 'Yazz's Liquid Love'"
+ja 1m "Yeah me and Yazzier made it together."
+show jacob 1a
+j "U gotta be some of the gayest niggas."
+z 2j "All natrual flavors."
+ja 3q "I mean he does got a point, but what does it taste like?"
+show jacob 1v
+show yazz 1b
+"Yazz takes the liquid and shoves into Jacobs mouth."
+ja 1l "Oh my glob."
+"Nigga turned into false bagueetee"
+play sound scream
+show jacob fb
+ja "Ah, so this is where my power went."
+z 2a "Yazz's Liquid Love, it will save you in a pinch."
+j "Really now.. I gotta try that out."
+show yazz 2g at t31
+show jacob fb at t32
+show monika forward pout om oe at t33
+m "Bro what the fuck is going on."
+j "Not now love, I gotta get this liquid."
+z 2m "YEAH GET THE FUCK OUT BEFORE I FUCK YOU UP FUCKER NIGGER."
+show monika 1o 
+m "..."
+hide monika 
+show yazz 1b at t21
+show jacob fb at t22
+z "You can get this liquid."
+z 2p "ON ONE CONDITION."
+show yazz 2n
+j "Holy shit, what nigga WHAT DO YOU WANT FOR A FUCKING LIQUID."
+z 2b "You have to beat me at 'MEAT BEAT MANIA'"
+show yazz 2a
+ja "MEAT BEAT MANIA? I haven't played that game in so long."
+ja "Last time I played was last night."
+z 1d "Same bromine, but you can play it against each other."
+j "Alright, so how do you play?"
+z 2b "All you gotta do is maniaclly beat your meat until one of us busts a nut or gets friction burns."
+ja "That's all the game is Yazz?"
+z 1b "Yup, it's pretty simple. You up for a game Jacko?"
+z 1d "If you win you get my liquid love."
+z 2b "But if I win then uhh."
+z 1p "You'll see."
+show yazz 2b
+j "Alright BET SHORT AS NIGGA."
+j "I can do this easy."
+j "No problem."
+m "What the fuck man."
+"Monika begins to think to herself."
+m "The script is really broken right now."
+m "And things are going really wild."
+m "I'm not able to mess with it right now so I have to let it play out."
+m "Oh god, this is worse than the time Natsuki ate the last of the food in her house."
+stop music fadeout 1.5
+play sound flashback
+scene bg natsuki_room
+with pixellate
+play music nbike
+show natsukidad 5a at t41
+show natsuki 5bg at t44
+nd "..."
+n "..."
+nd 5b "So.. what happened to all the food in the fridge?"
+show natsukidad 5a
+n cross casual dist om oe "I ate them."
+n cross casual doub om oe "And what about it?"
+show natsuki cross casual doub cm oe
+nd 5h "..."
+show natsukidad 1i
+"Dadsuki lets out a tiring sigh."
+nd 2f "You know I don't have anymore money to last us the rest of the month."
+nd 2g "My fucking money is wasted on your snacking."
+n turned casual anno om oe "Why do you buy food if I can't eat any?"
+n turned casual lhip angr om ce "What's the point?"
+show natsukidad 1k at h41
+n cross casual angr om oe "You sound really fucking stupid right now."
+show natsuki cross casual angr cm oe
+nd 1m "..."
+show natsukidad 1j
+"..."
+nd 2m "YOU WILL TREAT ME WITH RESPECT!"
+nd 4l "NATSUKI, GET OVER HERE RIGHT NOW."
+n 1bm "Huh? Wait. Dad, I'm sorry dad just let me-"
+show natsukidad 4m at t43
+pause 0.1
+scene black
+play sound smack
+stop music fadeout 10.0
+"..."
+scene bg corridor_pov
+play sound flashback
+with pixellate 
+show monika forward nerv cm oe at t11
+m "Hmm.."
+show monika 1c at t21
+show natsuki 5h at t22
+n "Yeah, we don't talk about that."
+show natsuki 5i 
+m forward nerv om oe "Agreed."
+show monika forward nerv cm oe
+"..."
+hide monika 
+hide natsuki
+show yazz 1g at t11
+j "Are you ready Yazz?"
+z 2j "Ready as I'll ever be my shligga."
+call meat_beat_mania from _call_meat_beat_mania
+if yazz_win:
+    scene bg corridor_pov
+    show yazz 1f at t11
+    z "Oh man, I really am skimmed out right now."
+    show yazz 1n at t11
+    "Yazz pulls his pants back up but they look like their on fire from the force earlier."
+    z 2b "That was a good game but it wasnt fair how you were looking at Monika like that."
+    show yazz 2a
+    j "She REALLY is good motivation bromine you should try it out."
+    show jacob fb at t22
+    show yazz 1i at t21
+    ja "You know what they say."
+    ja "If you're touchable your rapeable."
+    ja "Grandpa taught me that when I was yay-high."
+    j "Bro what shut up nigga."
+    z 2h "On god, on gd FOLK."
+    z 1l "But in all seriousness."
+    z 2b "Here, you deserved it buddy."
+    call collect_item("Yazz's Liquid Love") from _call_collect_item_1
+    show yazz 2a
+    j "Thank you, my friend."
+    j "Not really sure what I'm gonna do with this but we'll see."
+    z 2b "You should really give it to Yuri."
+    z 2j "I know she'll like it."
+    show yazz smile 
+    "Yazz puts on a DEVIOUS smile."
+    j "Uhh sure, I'll go ahead and do that soon, but I really gotta now. I hope you and jacob enjoy the rest of the festival!"
+    z 2b "We will!"
+    show yazz 2a
+    ja "Oh, YES. We WILL."
+    hide yazz
+    hide jacob
+    "Yazz and Jacob depart (in a cool way.)"
+    show monika 2b at t11
+    m "Finally, I think the script is back in working order.."
+    "Monika and I continue walking to the Music Club."
+    "..."
+    scene black
+    with dissolve_scene_full
+    jump chap1_end
+else:
+    scene bg corridor_pov
+    j "Bruh I lost."
+    play sound fail
+    "A sad trombone plays. Yazz and Jacob loom over you, shaking their heads in disappointment."
+    show yazz smile at t11
+    z "Damn, bro. You got clapped. Like, 'Monika deleted my save file' levels of clapped."
+    show yazz smile at t21
+    show jacob fb at t22
+    ja "Should’ve trained with me, nigga. My grandpa could’ve taught you the ancient art of Kung Fu Lou."
+    hide yazz
+    show jacob fb at t11
+    "He unsheathes a Dollar Store katana with 'Gigas Imperial engraved on it."
+    "You try to stand, but your legs give out. The world spins."
+    scene bg gameover
+    play sound crimson
+    "..."
+    "Suddenly, you’re in a void with a floating 'GAME OVER'' screen… except it’s just a Google Slides template."
+    "Monika's voice echos."
+    show monika forward dist om oe at t44
+    m "Wow, even I couldn't script this failure."
+    show monika forward dist cm oe
+    "A shadowy figure materializes."
+    "A floating mustache with sunglasses."
+    show monika forward neut e1d
+    show jdad at t11
+    g "YOU WEAKLING. BACK IN MY DAY, WE LOST WITH DIGNITY. NOW LOOK AT YOU. PATHETIC."
+    "Jacob kneels, tears in his eyes."
+    play sound crimson
+    show jacob fb at t41
+    ja "GRANDPA! TEACH HIM THE WAYS OF THE LOST ONES!"
+    "Grandpa tosses you a crumpled energy drink can labeled 'shidfarded'"
+    g "DRINK. AND ARISE."
+    "Your game will now close in 5 seconds."
+    pause 5.0
+    $ renpy.quit()
+
+
+label chap1_end:
+    scene bg stairs
+    with wipeleft
+    pause 1.5
+    scene bg corridor_reverse
+    with wipeleft
+    pause 1.5
+    scene bg music_room
+    with wipeleft
+"After what feels like an eternity, we finally reach the Music Room."
+j "Woah.."
+"I know I've basically seen almost every room in this school so far but I haven't seen the Music Room at all."
+"Monika follows from behind me."
+show monika forward vsur om oe at t11
+m "Wow, there is a lot of people in here!"
+m forward happ om oe "I didn't realize the Music Club was this active."
+show monika forward happ cm oe
+j "Yeah, and look at all these instruments! They've even got a grand piano."
+m lean happ e3 "Oh! That's a beautiful Steinway concert grand! Do you think they'd let me play it?"
+j "Wait, you play piano?"
+m forward lpoint rhip laug cm oe "A little. I've been practicing for years, actually. My parents made me take lessons when I was young, but... I ended up really loving it."
+show monika forward ldown rdown happ cm oe
+"Suddenly, someone in the room approaches us."
+show monika forward happ cm oe at t21
+show femc turned happ om oe at t22
+c "Hey, are you two here to audition for the festival?"
+show femc turned happ cm oe
+j "Audition?"
+m 2b "Oh! You mean the Spring Audition?"
+show monika 2a
+c turned lhip happ om oe "Yeah! We're putting together our biggest performance yet. We've got orchestra, choir, and even a jazz ensemble this year."
+show femc turned happ cm oe
+m 3e "That sounds amazing! What kind of repertoire are you doing?"
+show monika 1e
+c turned lup mc oe "This year's theme is 'Musical Evolution' we're covering everything from Baroque to modern pop arrangements."
+c turned ldown om ce "We could really use another skilled pianist, especially for the ensemble pieces."
+show femc turned cm oe
+m forward ldown happ om ce "Oh! Well... if it's okay, maybe I could try?"
+show monika forward happ cm oe
+j "Ohhh, now we get to see how good you really are."
+m 5a "Just wait—I might surprise you."
+show monika 1a
+c turned neut mc "That would be wonderful! We have open audition slots right now actually. Would you like to play something for us?"
+hide femc
+show monika 1a at t11
+j "You should go for it, Monika! I'd love to hear you play."
+m forward nerv om oe "Really? You don't think it would be showing off?"
+show monika forward nerv cm oe
+j "Are you kidding? This is your moment! Besides, I've never heard you play seriously before."
+show monika forward pout cm ce
+"Monika takes a deep breath."
+m 2l "Okay... I'll do it. But only if you promise not to laugh if I mess up."
+show monika 2m
+j "Wouldn't dream of it. Though I might tease you about it later if you're amazing."
+m forward nerv blus mh e2b "J-Jacko..."
+show monika forward nerv cm oe at t21
+show femc turned happ om oe at t22
+c "Wonderful! We've got the piano tuned just this morning. What would you like to play?"
+show femc turned happ cm oe
+m 2d "Hmm... I'm not sure.. Can I just play something I've made? Unless you'd prefer something more modern?"
+show monika 2c
+c turned lhip rhip vsur mb oe "Of course you can play you're own song! We're doing a whole segment on original pieces too."
+show femc turned happ cm oe
+j "I had no idea you wrote your own songs! You really are full of surprises Monika."
+show monika lean cm oe
+"Monika chuckles."
+m lean happ b2 om "Well, don't get too excited yet. I've only wrote 2 songs and, It's been a while since I've played for an audience."
+m 1b "Even though my 'audience' was my parents."
+show monika 1a
+j "I bet It's still good Monika just try your best."
+m 4k "Alright Jacko, I appreciate the encouragement."
+show monika 2a
+"Monika steps over to the Grand Piano and takes her seat."
+c turned happ om ce "Whenever you're ready, the piano is all yours."
+hide femc
+show monika forward worr om oe at t11
+m "Okay... here goes nothing."
+show monika worr cm oe
+"..."
+scene black
+with dissolve_scene_full
+pause 2.0
+scene bg corridor_reverse
+with dissolve_scene_full
+c "Come on Monika! That was so beautiful! Please join us in the performance!"
+m "I'm really sorry! I just can't I don't have any more time to commit to another club."
+m "I am the Literature Club President."
+m "I'd just be too much for me to handle."
+c "Are you serious! Your a club president yourself!?"
+m "Huh? is it that hard to believe?"
+c "N-no it's just I never expected a club president to be having fun during the festival."
+c "Usually all of the club presidents are really busy during the school's festival."
+m "Our club finished early actually!"
+c "Wait... you're telling me you already finished all your club's festival preparations?"
+m "That's right! We set up our poetry reading cafe early this morning!"
+j "Yeah, we worked super hard to get everything done early."
+"I say that but I can mostly attribute that to Natsuki and Yuri."
+c "No way... the festival basically just started!"
+"Several nearby students start whispering."
+"Another student from the classroom begins to walk to us."
+who "Hold on, let's not crowd her."
+"The woman turns to Monika."
+who "I understand completely, club president duties come first always. Right?"
+j "Oh! You must be the club president?"
+p "Yes! You're absolutely right!"
+k "My name is Kotonoha."
+k "I am the president of the Music Club."
+k "Sorry for not introducing myself earlier.."
+m "Oh, no worries Kotonoha! I should've went up to you first really.."
+m "Thank you for understanding. I really would love to play, but..."
+k "No need to explain. Your club is lucky to have such a dedicated president."
+c "But president! She's so good! We could really-"
+k "That's enough. We don't pressure performers."
+k "The piano is always here if you want to play for fun though."
+m "I appreciate that. Maybe I'll stop by during free periods."
+j "Yeah, and we'll all come watch your actual performance too!"
+k "We'd love that. Now, let's give our guests some space."
+"The crowd gradually disperses."
+k "Bye you guys! Have fun on your festival date!"
+"Before one of us gets to say something, she laughs and prances back into the club room."
+j "..."
+m "..."
+"The air is thick."
+"..."
+m "That was... intense. Huh?"
+j "T-tell me about it! S-since when are you a piano celebrity?"
+"My voice is moving in all sorts of places."
+m "Oh don't give me that Jacko. You know it wasn't that good."
+j "Not good? Really?"
+j "Monika..."
+menu:
+    "We should get you on the roof with a piano.":
+        j "We should get you on the roof with a piano."
+        m "E-eh? What do you mean? Like play for the whole school?"
+        j "Yeah! Exactly like that, I think the school would enjoy that performance."
+        "Monika begins to laugh nervously."
+        m "Ahaha~ Jacko you think of the weirdest things you know that?"
+        j "Hehehe, yeah.."
+        j "Hehe.."
+        m "..."
+        j "..."
+        "..."
+        "The air is filled a weird atmosphere...?"
+        call rizz_update(points_change=-1)
+        m "Uhh..."
+
+    "The piano looked happy.":
+        j "The piano looked happy Monika."
+        j "That's how I know the music was perfect."
+        m "..E-eh? The piano!?"
+        "Monika begins playing with her ribbon."
+        m "That's.. an unusual way to put it Jacko."
+        j "The way I see it, you were the only one who could've made that piano sound perfect."
+        "Monika's face brightens up."
+        m "Y-you really mean that Jacko?"
+        j "Y-yes I really do M-Monika, honest."
+        "Your words studder a little bit but Monika seems really happy about that comment."
+        m "I've always worked so hard to get good at the piano so that really made me happy Jacko."
+        "Monika smiles once again but it feels really genuine."
+        call rizz_update(points_change=+4)
+
+
+    "…You missed a note.":
+        j "…You missed a note."
+        m "..."
+        "The air suddenly feels several degrees colder."
+        m "Did I now?"
+        m "I've played that piece 147 times this month."
+        m "Would you mind pointing out exactly where?"
+        "Monika looks angry."
+        j "W-well.. I would say the part wher-{nw}"
+        m "No. You don't know, you're not a musical genius so don't be telling me where I messed up."
+        m "..."
+        m "Ahaha~ Sorry Jacko, that was mean of me. I really didn't mean that."
+        m "Let's just move on, okay?"
+        "Monika laughs nervously."
+        j "Y-yeah Monika let's... move on.."
+        "You feel a pit in your stomach."
+        "Actual fucker you know that?"
+        call rizz_update(points_change=-3)
+
+
+
+"Monika turns to you with a bright smile."
+m "What do you say we head outside? There are even more booths out there, and I’d love to show you around."
+j "Sounds like a plan. Let’s go!"
+"You and Monika step outside, where the festival continues in full force."
+scene bg school_outside
+with wipeleft
+"The school courtyard is filled with colorful booths, games, and food stalls. The air is filled with laughter and the smell of delicious treats."
+m "Isn’t this amazing? I love how the whole school comes alive during the festival."
+j "It’s incredible. I didn’t realize there was so much going on outside."
+m "Oh, there’s always something new to discover. You never know what you’ll find at a school festival."
+j "Like what? What’s the weirdest thing you’ve seen at one of these?"
+m "Hmm, let me think. One year, the science club set up a booth where they made slime in every color imaginable. It was... interesting, to say the least."
+j "Slime? Really? That sounds like something out of a kids’ show."
+m "Oh, it was. But you’d be surprised how many people lined up to take some home. I guess everyone has a soft spot for nostalgia."
+j "I’ll take your word for it. I’m more of a food booth kind of guy."
+m "Speaking of which, we should definitely grab something to eat. I’m starving."
+j "Same here. What’s good around here?"
+m "Well, there’s a takoyaki stall over there that’s always a hit. Or, if you’re feeling adventurous, there’s a booth selling mystery skewers."
+j "Mystery skewers? That sounds... risky."
+m "Exactly! That’s what makes it fun. You never know what you’re going to get."
+j "I think I’ll stick with the takoyaki. I don’t trust mystery meat."
+m "Fair enough. But don’t come crying to me when you miss out on the culinary adventure of a lifetime."
+j "I’ll take my chances."
+"As you walk toward the takoyaki stall, Monika suddenly stops and points to a game booth."
+m "Oh, look! They have one of those ring toss games. I’ve always wanted to try that."
+j "You? Playing a carnival game? I didn’t take you for the competitive type."
+m "Oh, I’m full of surprises. Besides, I have a good feeling about this one."
+j "Alright, let’s see what you’ve got."
+"Monika steps up to the booth and hands over a few tickets. She takes the rings and focuses intently on the targets. With a flick of her wrist, she lands three rings in a row."
+j "Whoa, you’re a natural! Where did you learn to do that?"
+m "I told you, I have my secrets. But don’t worry, I’ll teach you someday."
+"The booth attendant hands Monika a small stuffed bear as a prize. She turns to you with a grin."
+m "Here, Jacko. This is for you."
+j "For me? But you won it."
+m "Exactly. Consider it a token of my victory and a reminder that you owe me a rematch."
+call collect_item("Small Stuffed Bear") from _call_collect_item_2
+"You take the bear, laughing. It’s a silly little thing, but it feels special coming from her."
+j "Thanks, Monika. I’ll treasure it forever."
+m "You’d better."
+m "So... what do you wanna do now Jacko? The festival has only just started and theres tons we can do!"
+j "Hmmmm..."
+"There is so much to do during a festival you can't even decide."
+j "How about we..."
+
+
+
+scene black
+"That's the end of the demo!"
+"I'm really tired and so I'm taking a break from making it."
+"Please Rape the mod."
+menu:
+    "10/10":
+        "YES!"
+    "1/10":
+        "NIGGER FUCK YOU JAIHOSA FUCK AISOAK NIGAE"
+    "6/10":
+        "Thanks nigga aight."
+
+
+#Choices:
+#"Let’s grab some takoyaki. I’m starving!", 
+#"How about we check out the haunted house? I heard the Film Club set it up.",
+#"Let’s stay here for a bit. It’s nice just talking with you."
+#"The Art Club seems pretty interesting. You wanna head there?"
+#"We should play some more games and win more prizes, I think I win you some prizes for a change."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return

@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/options.rpy", line 91: expected statement.
+    config.window_icon = "gui/window_icon_jolly.png"
+                       ^
+
+File "game/options.rpy", line 93: expected statement.
+    config.window_icon = "gui/window_icon.png"
+                       ^
+
+Ren'Py Version: Ren'Py 8.4.1.25072401
+Mon Dec 22 19:32:55 2025
