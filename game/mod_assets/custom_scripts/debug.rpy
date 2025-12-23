@@ -108,39 +108,6 @@ label debug_menu_page1:
                 "Return":
                     jump debug_menu_page1
                     
-        "Main Menu Art System":
-            menu:
-                "Main Menu Art Debug Options:"
-                "Unlock All Main Menu Art":
-                    call update_menu_art("gui/menu_art_mj_6.png") from _call_update_menu_art
-                    $ ach_unlock('mj_art_6')
-                    $ renpy.restart_interaction()
-                    "All menu art has been unlocked."
-                "Unlock Specific Menu Art":
-                    menu:
-                        "Select a menu art to unlock:"
-                        "Menu Art 1":
-                            call update_menu_art("gui/menu_art_mj_1.png") from _call_update_menu_art_1
-                        "Menu Art 2":
-                            call update_menu_art("gui/menu_art_mj_2.png") from _call_update_menu_art_2
-                        "Menu Art 3":
-                            call update_menu_art("gui/menu_art_mj_3.png") from _call_update_menu_art_3
-                        "Menu Art 4":
-                            call update_menu_art("gui/menu_art_mj_4.png") from _call_update_menu_art_4
-                        "Menu Art 5":
-                            call update_menu_art("gui/menu_art_mj_5.png") from _call_update_menu_art_5
-                        "Menu Art 6":
-                            call update_menu_art("gui/menu_art_mj_6.png") from _call_update_menu_art_6
-                            $ ach_unlock('mj_art_6')
-                            $ renpy.restart_interaction()
-                        "Return":
-                            jump debug_menu_page1
-                "Increment MJ Art":
-                    call update_mj_art from _call_update_mj_art_1
-                    "MJ art has been updated by 1."
-                "Return":
-                    jump debug_menu_page1
-                    
         "Back to Main Debug Menu":
             jump debug_menu
 
@@ -203,8 +170,8 @@ label debug_menu_page2:
                     call shooting_gallery from _call_shooting_gallery
                 "Meat Beat Mania":
                     call meat_beat_mania from _call_meat_beat_mania_1
-                "Yazzinator Battle":
-                    call battle_start from _call_battle_start
+                "Whack-a-Mole":
+                    call whack_a_mole 
                 "Return":
                     jump debug_menu_page2
                     

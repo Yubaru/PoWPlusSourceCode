@@ -1,34 +1,22 @@
-2025-12-23 18:23:53 UTC
+2025-12-23 19:22:01 UTC
 Windows-10-10.0.19044-SP0
 Ren'Py 8.4.1.25072401
 
-Early init took 63 ms
-Loading error handling took 84 ms
-Loading script took 5016 ms
-Loading save slot metadata took 53 ms
-Loading persistent took 0 ms
-Running init code took 400 ms
-Loading analysis data took 42 ms
-Analyze and compile ATL took 49 ms
-Reloading save slot metadata took 53 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 9 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 81 ms
+Early init took 114 ms
+Loading error handling took 52 ms
+Loading script took 3001 ms
+Loading save slot metadata took 43 ms
+Loading persistent took 1 ms
+
+The label _call_whack_a_mole is defined twice, at File "game/mod_assets/custom_scripts/debug.rpy", line 174:
+                    call whack_a_mole from _call_whack_a_mole
+and File "game/mod_assets/story_scripts/story_script_choices/game_story.rpy", line 283:
+call whack_a_mole from _call_whack_a_mole
+
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 329 ms
-Init translation took 4 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 21 ms
-Save screen analysis took 22 ms
-Save pyanalysis took 0 ms
-Save bytecode took 50 ms
-Running _start took 2 ms
-Interface start took 554 ms
+Interface start took 689 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -42,6 +30,54 @@ Screen sizes: virtual=(1280, 720) physical=(1088, 612) drawable=(1088, 612)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
 INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+INFO:renpy_warp_service:closing websocket connection :40111
+INFO:renpy_warp_service:connection replaced, service exiting
+INFO:renpy_warp_service:service closed
+Resetting cache.
+Early init took 25 ms
+Loading error handling took 8 ms
+Loading script took 360 ms
+Loading save slot metadata took 23 ms
+Loading persistent took 1 ms
+Running init code took 278 ms
+Loading analysis data took 21 ms
+Analyze and compile ATL took 51 ms
+Reloading save slot metadata took 7 ms
+Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
+Dump and make backups took 7 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 96 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 279 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 21 ms
+Save screen analysis took 24 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 2 ms
+Interface start took 548 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 581.57'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1088, 612) drawable=(1088, 612)
+Maximum texture size: 4096x4096
+INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
+INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+Cleaning stores took 1 ms
+Load screen analysis took 50 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
 INFO:renpy_warp_service:closing websocket connection :40111
 INFO:renpy_warp_service:connection replaced, service exiting
 INFO:renpy_warp_service:service closed

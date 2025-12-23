@@ -2,13 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 91: expected statement.
-    config.window_icon = "gui/window_icon_jolly.png"
-                       ^
+The label _call_whack_a_mole is defined twice, at File "game/mod_assets/custom_scripts/debug.rpy", line 174:
+                    call whack_a_mole from _call_whack_a_mole
+and File "game/mod_assets/story_scripts/story_script_choices/game_story.rpy", line 283:
+call whack_a_mole from _call_whack_a_mole
 
-File "game/options.rpy", line 93: expected statement.
-    config.window_icon = "gui/window_icon.png"
-                       ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Mon Dec 22 19:32:55 2025
+Tue Dec 23 14:22:04 2025
