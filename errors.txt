@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label _call_whack_a_mole is defined twice, at File "game/mod_assets/custom_scripts/debug.rpy", line 174:
-                    call whack_a_mole from _call_whack_a_mole
-and File "game/mod_assets/story_scripts/story_script_choices/game_story.rpy", line 283:
-call whack_a_mole from _call_whack_a_mole
-
+File "game/screens.rpy", line 976: Line is indented, but the preceding use statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    python:
+    ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Tue Dec 23 14:22:04 2025
+Thu Dec 25 02:06:22 2025
