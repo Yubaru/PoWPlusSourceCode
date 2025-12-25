@@ -150,6 +150,9 @@ define audio.scary_music = "mod_assets/music/scary_music.ogg"
 define audio.bells = "mod_assets/music/bells.ogg"
 define audio.natsuki_baking = "mod_assets/music/natsuki_baking.ogg"
 define audio.brad = "mod_assets/music/brad.ogg"
+define audio.serenade = "mod_assets/music/serenade.ogg"
+define audio.xmasdaijbou = "mod_assets/music/xmasdaijbou.ogg"
+define audio.xmasohayou = "mod_assets/music/xmasohayou.ogg"
 
 
 
