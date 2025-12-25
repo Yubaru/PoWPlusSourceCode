@@ -348,7 +348,8 @@ screen say(who, what):
                     action phone_action
                     at phone_button_hover
             
-
+    # Snow effect - shows during Christmas mode
+    use snow_effect
 
     use quick_menu
 
@@ -1036,6 +1037,9 @@ screen main_menu():
                     action Function(renpy.notify, "Achievement Star: Game Completed!")
         
         # Fade effect already added earlier; avoid overlaying stars
+    
+    # Snow effect - shows during Christmas mode
+    use snow_effect
 
     if gui.show_name:
 
@@ -1152,6 +1156,9 @@ screen game_menu(title, scroll=None):
                     transclude
 
     use navigation
+    
+    # Snow effect - shows during Christmas mode
+    use snow_effect
 
     if not main_menu and persistent.playthrough == 2 and not persistent.menu_bg_m and renpy.random.randint(0, 49) == 0:
         on "show" action Show("game_menu_m")
