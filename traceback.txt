@@ -3,215 +3,33 @@
 While running game code:
   File "game/script.rpy", line 66, in script call
     call prologue
-  File "game/mod_assets/story_scripts/prologue.rpy", line 118, in script
-    "..."
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 352, in execute
-    use snow_effect
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in execute
-    on "show" action Function(apply_christmas_colors)
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in keywords
-    on "show" action Function(apply_christmas_colors)
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in <module>
-    on "show" action Function(apply_christmas_colors)
-                              ^^^^^^^^^^^^^^^^^^^^^^ 
-NameError: name 'apply_christmas_colors' is not defined
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
   File "game/script.rpy", line 66, in script call
     call prologue
-  File "game/mod_assets/story_scripts/prologue.rpy", line 118, in script
-    "..."
-  File "game/script.rpy", line 66, in script call
-    call prologue
-  File "game/mod_assets/story_scripts/prologue.rpy", line 118, in script
-    "..."
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 352, in execute
-    use snow_effect
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in execute
-    on "show" action Function(apply_christmas_colors)
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in keywords
-    on "show" action Function(apply_christmas_colors)
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in <module>
-    on "show" action Function(apply_christmas_colors)
-                              ^^^^^^^^^^^^^^^^^^^^^^ 
-NameError: name 'apply_christmas_colors' is not defined
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+renpy.script.LabelNotFound: could not find label 'first_gc_convo'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
   File "game/script.rpy", line 66, in script call
     call prologue
-  File "game/mod_assets/story_scripts/prologue.rpy", line 118, in script
-    "..."
-  File "renpy/ast.py", line 2915, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 991, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/sayexports.py", line 129, in say
-    who(what, *args, **kwargs)
-    ~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1543, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1198, in do_display
-    display_say(who, what, self.do_show, **display_args)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 820, in display_say
-    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
-                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 1565, in get_displayable
-    screen.update()
-    ~~~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 352, in execute
-    use snow_effect
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in execute
-    on "show" action Function(apply_christmas_colors)
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in keywords
-    on "show" action Function(apply_christmas_colors)
-  File "renpy/python.py", line 1292, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1285, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in <module>
-    on "show" action Function(apply_christmas_colors)
-                              ^^^^^^^^^^^^^^^^^^^^^^ 
-NameError: name 'apply_christmas_colors' is not defined
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "renpy/bootstrap.py", line 376, in bootstrap
-    renpy.main.main()
-    ~~~~~~~~~~~~~~~^^
-  File "renpy/main.py", line 614, in main
-    run(restart)
-    ~~~^^^^^^^^^
-  File "renpy/main.py", line 137, in run
-    renpy.execution.run_context(True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "renpy/execution.py", line 1022, in run_context
-    context.run()
-    ~~~~~~~~~~~^^
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+  File "renpy/ast.py", line 1622, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "game/script.rpy", line 66, in script call
     call prologue
-  File "game/mod_assets/story_scripts/prologue.rpy", line 118, in script
-    "..."
-  File "game/script.rpy", line 66, in script call
-    call prologue
-  File "game/mod_assets/story_scripts/prologue.rpy", line 118, in script
-    "..."
-  File "renpy/display/error.py", line 135, in report_exception
-    renpy.game.invoke_in_new_context(
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        call_exception_screen,
-        ^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        ignore_action=ignore_action,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/game.py", line 301, in invoke_in_new_context
-    return callable(*args, **kwargs)
-           ~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/display/error.py", line 44, in call_exception_screen
-    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2757, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2757, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 267, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 352, in execute
-    use snow_effect
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 465, in execute
-    screen snow_effect():
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in execute
-    on "show" action Function(apply_christmas_colors)
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in keywords
-    on "show" action Function(apply_christmas_colors)
-  File "renpy/python.py", line 1292, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1285, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/mod_assets/custom_scripts/christmas_mode_changes.rpy", line 467, in <module>
-    on "show" action Function(apply_christmas_colors)
-                              ^^^^^^^^^^^^^^^^^^^^^^ 
-NameError: name 'apply_christmas_colors' is not defined
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+  File "renpy/script.py", line 1161, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'first_gc_convo'.
 
 Windows-10-10.0.19044-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Doki Doki Paradise of Wacko Plus! 1.0.0 Pre-Alpha
-Thu Dec 25 02:45:30 2025
+Fri Dec 26 00:21:05 2025

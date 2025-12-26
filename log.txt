@@ -1,335 +1,38 @@
-2025-12-25 07:47:45 UTC
+2025-12-26 05:19:30 UTC
 Windows-10-10.0.19044-SP0
 Ren'Py 8.4.1.25072401
 
-Early init took 53 ms
-Loading error handling took 39 ms
-Loading script took 2899 ms
-Loading save slot metadata took 42 ms
-Loading persistent took 0 ms
-Running init code took 304 ms
-Loading analysis data took 32 ms
-Analyze and compile ATL took 59 ms
-Reloading save slot metadata took 8 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 8 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 84 ms
+Early init took 50 ms
+Loading error handling took 30 ms
+Loading script took 2252 ms
+Loading save slot metadata took 35 ms
+Loading persistent took 1 ms
+
+Full traceback:
+  File "game/definitions/splash.rpy", line 264, in script
+    init python:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/definitions/splash.rpy", line 272, in <module>
+    restore_all_characters()
+    ^^^^^^^^^^^^^^^^^^^^^^  
+NameError: name 'restore_all_characters' is not defined
+
+While running game code:
+  File "game/definitions/splash.rpy", line 264, in script
+    init python:
+  File "game/definitions/splash.rpy", line 272, in <module>
+    restore_all_characters()
+    ^^^^^^^^^^^^^^^^^^^^^^  
+NameError: name 'restore_all_characters' is not defined
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 296 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 7 ms
-Analyze screens took 22 ms
-Save screen analysis took 24 ms
-Save pyanalysis took 26 ms
-Save bytecode took 50 ms
-Running _start took 1 ms
-Interface start took 562 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-Cleaning stores took 0 ms
-Load screen analysis took 49 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 74 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 18 ms
-Loading error handling took 30 ms
-Loading script took 458 ms
-Loading save slot metadata took 30 ms
-Loading persistent took 1 ms
-Running init code took 305 ms
-Loading analysis data took 24 ms
-Analyze and compile ATL took 58 ms
-Reloading save slot metadata took 8 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 7 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 117 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 20 ms
-Save screen analysis took 24 ms
-Save pyanalysis took 25 ms
-Save bytecode took 0 ms
-Running _start took 2 ms
-Interface start took 545 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 23 ms
-Loading error handling took 9 ms
-Loading script took 538 ms
-Loading save slot metadata took 35 ms
-Loading persistent took 0 ms
-Running init code took 294 ms
-Loading analysis data took 22 ms
-Analyze and compile ATL took 55 ms
-Reloading save slot metadata took 7 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 6 ms
-Cleaning cache took 1 ms
-Making clean stores took 0 ms
-Initial gc took 112 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 20 ms
-Save screen analysis took 24 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 2 ms
-Interface start took 571 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 19 ms
-Loading error handling took 8 ms
-Loading script took 557 ms
-Loading save slot metadata took 49 ms
-Loading persistent took 0 ms
-Running init code took 393 ms
-Loading analysis data took 29 ms
-Analyze and compile ATL took 65 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 8 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 128 ms
-DPI scale factor: 1.000000
-Creating interface object took 1 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 28 ms
-Save screen analysis took 32 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 3 ms
-Interface start took 688 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 18 ms
-Loading error handling took 8 ms
-Loading script took 398 ms
-Loading save slot metadata took 35 ms
-Loading persistent took 0 ms
-Running init code took 312 ms
-Loading analysis data took 25 ms
-Analyze and compile ATL took 60 ms
-Reloading save slot metadata took 8 ms
-Dump and make backups took 0 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 121 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 55 ms
-Analyze screens took 2 ms
-Save screen analysis took 0 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 617 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 26 ms
-Loading error handling took 12 ms
-Loading script took 435 ms
-Loading save slot metadata took 32 ms
-Loading persistent took 1 ms
-Running init code took 438 ms
-Loading analysis data took 29 ms
-Analyze and compile ATL took 68 ms
-Reloading save slot metadata took 10 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 7 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 118 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 22 ms
-Save screen analysis took 23 ms
-Save pyanalysis took 28 ms
-Save bytecode took 0 ms
-Running _start took 2 ms
-Interface start took 599 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 21 ms
-Loading error handling took 16 ms
-Loading script took 529 ms
-Loading save slot metadata took 34 ms
-Loading persistent took 0 ms
-Running init code took 309 ms
-Loading analysis data took 31 ms
-Analyze and compile ATL took 58 ms
-Reloading save slot metadata took 8 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 7 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 148 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 8 ms
-Analyze screens took 24 ms
-Save screen analysis took 26 ms
-Save pyanalysis took 30 ms
-Save bytecode took 0 ms
-Running _start took 2 ms
-Interface start took 613 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 21 ms
-Loading error handling took 18 ms
-Loading script took 496 ms
-Loading save slot metadata took 38 ms
-Loading persistent took 0 ms
-Running init code took 363 ms
-Loading analysis data took 34 ms
-Analyze and compile ATL took 72 ms
-Reloading save slot metadata took 9 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 7 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 121 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 7 ms
-Analyze screens took 22 ms
-Save screen analysis took 23 ms
-Save pyanalysis took 28 ms
-Save bytecode took 0 ms
-Running _start took 2 ms
-Interface start took 600 ms
+Interface start took 598 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -348,72 +51,32 @@ INFO:renpy_warp_service:connection replaced, service exiting
 INFO:renpy_warp_service:service closed
 Resetting cache.
 Early init took 20 ms
-Loading error handling took 7 ms
-Loading script took 534 ms
-Loading save slot metadata took 31 ms
-Loading persistent took 0 ms
-Running init code took 303 ms
-Loading analysis data took 26 ms
-Analyze and compile ATL took 70 ms
-Reloading save slot metadata took 7 ms
-Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 7 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 133 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 2 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 22 ms
-Save screen analysis took 26 ms
-Save pyanalysis took 28 ms
-Save bytecode took 1 ms
-Running _start took 2 ms
-Interface start took 599 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 581.57'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 100, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-INFO:renpy_warp_service:connected to renpy warp socket server on :40111
-INFO:renpy_warp_service:closing websocket connection :40111
-INFO:renpy_warp_service:connection replaced, service exiting
-INFO:renpy_warp_service:service closed
-Resetting cache.
-Early init took 19 ms
-Loading error handling took 14 ms
-Loading script took 471 ms
-Loading save slot metadata took 33 ms
-Loading persistent took 1 ms
-Running init code took 307 ms
-Loading analysis data took 31 ms
-Analyze and compile ATL took 65 ms
+Loading error handling took 9 ms
+Loading script took 1314 ms
+Loading save slot metadata took 29 ms
+Loading persistent took 10 ms
+Running init code took 308 ms
+Loading analysis data took 22 ms
+Analyze and compile ATL took 56 ms
 Reloading save slot metadata took 8 ms
 Backing up script files to 'C:\\Users\\Yami\\AppData\\Roaming/RenPy/backups\\WackoPlusSourceCode':
-Dump and make backups took 6 ms
-Cleaning cache took 1 ms
-Making clean stores took 0 ms
-Initial gc took 118 ms
+Dump and make backups took 89 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 174 ms
 DPI scale factor: 1.000000
-Creating interface object took 0 ms
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 398 ms
 Init translation took 1 ms
 Cleaning stores took 0 ms
-Load screen analysis took 7 ms
-Analyze screens took 21 ms
-Save screen analysis took 26 ms
-Save pyanalysis took 26 ms
-Save bytecode took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 26 ms
+Save screen analysis took 31 ms
+Save pyanalysis took 0 ms
+Save bytecode took 6 ms
 Running _start took 2 ms
-Interface start took 587 ms
+Interface start took 803 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -427,3 +90,32 @@ Screen sizes: virtual=(1280, 720) physical=(1058, 595) drawable=(1058, 595)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
 INFO:renpy_warp_service:connected to renpy warp socket server on :40111
+
+Full traceback:
+  File "game/script.rpy", line 66, in script call
+    call prologue
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+  File "renpy/ast.py", line 1622, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 66, in script call
+    call prologue
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+  File "renpy/script.py", line 1161, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'first_gc_convo'.
+
+While running game code:
+  File "game/script.rpy", line 66, in script call
+    call prologue
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+  File "game/script.rpy", line 66, in script call
+    call prologue
+  File "game/mod_assets/story_scripts/prologue.rpy", line 323, in script call
+    call first_gc_convo from _call_first_gc_convo_1
+renpy.script.LabelNotFound: could not find label 'first_gc_convo'.
+INFO:renpy_warp_service:socket service on :40111 exited
+INFO:renpy_warp_service:closing websocket connection :40111

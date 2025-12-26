@@ -320,7 +320,7 @@ m 3l "Actually.. I should probably text and make sure everyone else is okay."
 m 4b "Let's see.."
 play music monikat5
 show monika 2a at t11
-call first_gc_convo from _call_first_gc_convo_1
+"Monika texts everyone to make sure they're okay."
 m "Well, that was something."
 m 2j "It looks like the script is back in working order too!"
 m 1h "Hmmm.. I'm not sure where the script is gonna go from here on out.."
